@@ -131,14 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3563862431593891529, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.2671144
-      objectReference: {fileID: 0}
-    - target: {fileID: 3563862431593891529, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.1709998
-      objectReference: {fileID: 0}
     - target: {fileID: 6997006738524802444, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5207693
@@ -179,14 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2236270901352616725, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6974276904481503499, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 418207691}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
 --- !u!1 &17423691
 GameObject:
@@ -488,50 +476,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356927013}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &418207684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6974276904481503499, guid: 496c3a13e9b7aaf419f7a2a664e49eba, type: 3}
-  m_PrefabInstance: {fileID: 7566992}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &418207691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418207684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineDeoccluder
-  CollideAgainst:
-    serializedVersion: 2
-    m_Bits: 1
-  IgnoreTag: 
-  TransparentLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  MinimumDistanceFromTarget: 0.1
-  AvoidObstacles:
-    Enabled: 1
-    DistanceLimit: 0
-    MinimumOcclusionTime: 0
-    CameraRadius: 0.1
-    UseFollowTarget:
-      Enabled: 0
-      YOffset: 0
-    Strategy: 0
-    MaximumEffort: 4
-    SmoothingTime: 0
-    Damping: 0.4
-    DampingWhenOccluded: 0.2
-  ShotQualityEvaluation:
-    Enabled: 0
-    OptimalDistance: 10
-    NearLimit: 5
-    FarLimit: 30
-    MaxQualityBoost: 0.2
 --- !u!1 &508212600
 GameObject:
   m_ObjectHideFlags: 0

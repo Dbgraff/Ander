@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent (typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    public bool CanMove { get; set; } = true; 
+
     [Header("Движение")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotationSpeed = 12f;
@@ -45,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float x = CanMove ? Input.GetAxisRaw("Horizontal") : 0f;
+        float z = CanMove ? Input.GetAxisRaw("Vertical") : 0f;
 
         Vector3 camForward = Vector3.ProjectOnPlane(cam.forward, Vector3.up).normalized;
         Vector3 camRight = Vector3.ProjectOnPlane(cam.right, Vector3.up).normalized;
