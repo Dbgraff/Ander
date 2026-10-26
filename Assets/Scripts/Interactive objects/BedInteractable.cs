@@ -14,7 +14,7 @@ using UnityEngine;
 /// јндер садитс€, затем встает и оказываетс€ у кровати.
 /// —рабатывает один раз.
 /// </summary>
-public class BedInteractable : MonoBehaviour
+public class BedInteractable : MonoBehaviour, IInteractable
 {
     [Header("¬заимодействие")]
     [SerializeField] private string prompt = "¬стать";
@@ -38,6 +38,11 @@ public class BedInteractable : MonoBehaviour
 
     public string Prompt => prompt;
     public bool CanInteract => !used;
+
+    /// <summary>
+    /// true, когда игрок полностью встал и получил управление
+    /// </summary>
+    public bool Finished { get; private set; }
 
     void Start()
     {
@@ -86,6 +91,7 @@ public class BedInteractable : MonoBehaviour
         }
 
         movement.CanMove = true;
+        Finished = true;
     }
 
     /// <summary>

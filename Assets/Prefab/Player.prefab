@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6997006738524802444}
   - component: {fileID: 3835167472045783934}
   - component: {fileID: 4718728224481978745}
+  - component: {fileID: 2733751334145499715}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35,6 +36,7 @@ Transform:
   - {fileID: 6827954634250323622}
   - {fileID: 2209000907642546465}
   - {fileID: 2703398754059178831}
+  - {fileID: 6527888441823034072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3835167472045783934
@@ -81,6 +83,24 @@ MonoBehaviour:
   sprintKey: 306
   slowSpeed: 2.5
   slowKey: 304
+--- !u!114 &2733751334145499715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173163702181789358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4d18a6cbc65b649a2c2e1ad1477148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
+  interactKey: 101
+  interactRadius: 1.5
+  originOffset: {x: 0, y: 1, z: 0}
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &2425797043741625752
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +191,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4014846432260478609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6527888441823034072}
+  m_Layer: 0
+  m_Name: HandSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6527888441823034072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014846432260478609}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.263, y: 0.97, z: 0.233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6997006738524802444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4944456260162985763
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +407,7 @@ GameObject:
   - component: {fileID: 1587550473334861628}
   - component: {fileID: 1344259402804883447}
   - component: {fileID: 2944250148565217158}
+  - component: {fileID: 1662897080010047169}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -627,6 +679,18 @@ MonoBehaviour:
     NearLimit: 5
     FarLimit: 30
     MaxQualityBoost: 0.2
+--- !u!114 &1662897080010047169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974276904481503499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80740a727d468ae46812c9895ad2f3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraInputLock
 --- !u!1 &8777222067762553971
 GameObject:
   m_ObjectHideFlags: 0

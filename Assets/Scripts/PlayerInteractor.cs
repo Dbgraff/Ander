@@ -14,12 +14,23 @@ public class PlayerInteractor : MonoBehaviour
     private readonly Collider[] hits = new Collider[5];
 
     /// <summary>
+    /// Блокирует взаимодействие
+    /// </summary>
+    public bool InteractionLocked { get; set; }
+
+    /// <summary>
     /// Ближайший доступный объект или null. Для UI подсказки.
     /// </summary>
     public IInteractable Current { get; private set; }
 
     private void Update()
     {
+        if (InteractionLocked)
+        {
+            Current = null;
+            return;
+        }
+
         Current = FindClosest();
 
         if (Current != null && Input.GetKeyDown(interactKey))
@@ -42,7 +53,7 @@ public class PlayerInteractor : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             IInteractable candidate = hits[i].GetComponentInParent<IInteractable>();
-            if (candidate != null || !candidate.CanInteract) continue;
+            if (candidate == null || !candidate.CanInteract) continue;
 
             float dist = Vector3.Distance(origin, hits[i].ClosestPoint(origin));
             if (dist < bestDist)
