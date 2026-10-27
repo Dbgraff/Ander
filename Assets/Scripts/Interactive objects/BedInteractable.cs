@@ -14,10 +14,11 @@ using UnityEngine;
 /// Андер садится, затем встает и оказывается у кровати.
 /// Срабатывает один раз.
 /// </summary>
-public class BedInteractable : MonoBehaviour, IInteractable
+public class BedInteractable : MonoBehaviour
 {
-    [Header("Взаимодействие")]
-    [SerializeField] private string prompt = "Встать";
+    [Header("Запуск")]
+    [Tooltip("РЕЖИМ РАЗРАБОТКИ: пропуск подъема с кровати")]
+    [SerializeField] private bool skipForDev;
 
     [Header("Куда встает Андер")]
     [SerializeField] private Transform standPoint;
@@ -36,7 +37,6 @@ public class BedInteractable : MonoBehaviour, IInteractable
 
     private bool used;
 
-    public string Prompt => prompt;
     public bool CanInteract => !used;
 
     /// <summary>
@@ -44,13 +44,35 @@ public class BedInteractable : MonoBehaviour, IInteractable
     /// </summary>
     public bool Finished { get; private set; }
 
-    void Start()
+    private IEnumerator Start()
     {
-        if (!lockPlayerOnStart) return;
+        if (skipForDev)
+        {
+            used = true;
+            Finished = true;
+            yield break;
+        }
+
+        if (!lockPlayerOnStart) yield break;
 
         PlayerMovement movement = FindAnyObjectByType<PlayerMovement>();
         if (movement != null)
             movement.CanMove = false;
+    }
+
+    public void StartGetUp()
+    {
+        if (used) return;
+
+        PlayerMovement movement = FindAnyObjectByType<PlayerMovement>();
+        if (movement == null)
+        {
+            Debug.LogWarning("BedInteractable: игрок на сцене не найден");
+            return;
+        }
+
+        used = true;
+        StartCoroutine(GetUpRoutine(movement.gameObject));
     }
 
     /// <summary>
@@ -59,7 +81,7 @@ public class BedInteractable : MonoBehaviour, IInteractable
     /// <param name="interactor"></param>
     public void Interact(GameObject interactor)
     {
-        if (used) return;
+        if (!CanInteract) return;
         used = true;
         StartCoroutine(GetUpRoutine(interactor));
     }

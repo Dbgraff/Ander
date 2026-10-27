@@ -11,6 +11,8 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private Vector3 originOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private LayerMask interactMask = -0;
 
+    public KeyCode InteractKey => interactKey;
+
     private readonly Collider[] hits = new Collider[5];
 
     /// <summary>

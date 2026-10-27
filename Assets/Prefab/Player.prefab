@@ -58,7 +58,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.7
-  m_Radius: 0.3
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractor
   interactKey: 101
-  interactRadius: 1.5
+  interactRadius: 0.3
   originOffset: {x: 0, y: 1, z: 0}
   interactMask:
     serializedVersion: 2
@@ -129,7 +129,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.85, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.85, z: 0.6}
+  m_LocalScale: {x: 0.4, y: 0.85, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6997006738524802444}
@@ -250,8 +250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4944456260162985763}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14844778, y: -0.000000014572788, z: 0.0000000021875355, w: 0.9889203}
-  m_LocalPosition: {x: 0, y: 2.2671144, z: -2.1709998}
+  m_LocalRotation: {x: 0.14851177, y: 0, z: 0, w: 0.9889107}
+  m_LocalPosition: {x: 0, y: 2.3706214, z: -2.5080001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -384,7 +384,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 1
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
