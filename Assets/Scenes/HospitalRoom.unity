@@ -1449,6 +1449,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614121806}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &649128410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649128411}
+  - component: {fileID: 649128412}
+  m_Layer: 6
+  m_Name: InspectCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &649128411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649128410}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2999571, y: 0.6457576, z: -0.30673262, w: -0.63161546}
+  m_LocalPosition: {x: 0.36988783, y: 0.55403244, z: -0.0880636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1090677064}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649128412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649128410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+  Priority:
+    Enabled: 1
+    m_Value: 20
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!1 &652107794
 GameObject:
   m_ObjectHideFlags: 0
@@ -49936,6 +50011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090677064}
   - component: {fileID: 1090677065}
+  - component: {fileID: 1090677066}
   m_Layer: 6
   m_Name: Interact_02_Nightstand
   m_TagString: Untagged
@@ -49955,7 +50031,8 @@ Transform:
   m_LocalPosition: {x: -3.058, y: 0.465, z: 1.748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 649128411}
   m_Father: {fileID: 17423692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1090677065
@@ -49973,12 +50050,36 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.69829345, y: 0.63132966, z: 0.8161875}
-  m_Center: {x: -0.15085328, y: -0.18433519, z: 0.09190625}
+  m_Size: {x: 0.8204582, y: 0.7017158, z: 0.8161875}
+  m_Center: {x: -0.08977091, y: -0.14914209, z: 0.09190625}
+--- !u!114 &1090677066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090677063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62950163639cbbe4aae813c56f7df104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InspectableInteractable
+  prompt: "\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
+  inspectCamera: {fileID: 649128410}
+  fallbackBlendTime: 1
+  inspectTitle: "\u0422\u0443\u043C\u0431\u043E\u0447\u043A\u0430"
+  inspectText: 
+  showCursor: 1
+  onInspectStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onInspectEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1107182875
 GameObject:
   m_ObjectHideFlags: 0
