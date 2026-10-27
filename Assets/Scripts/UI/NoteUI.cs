@@ -24,7 +24,7 @@ public class NoteUI : MonoBehaviour
         panel.SetActive(false);
     }
 
-    public IEnumerator ShowRoutine(string title, string body, Sprite image)
+    public IEnumerator ShowRoutine(string title, string body, Sprite image = null)
     {
         titleText.text = title;
         bodyText.text = body;
