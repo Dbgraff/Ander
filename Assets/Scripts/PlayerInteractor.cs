@@ -11,6 +11,9 @@ public class PlayerInteractor : MonoBehaviour
     [SerializeField] private Vector3 originOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private LayerMask interactMask = -0;
 
+    /// <summary>
+    ///  лавиша взаимодействи€, дл€ отображени€ в подсказке.
+    /// </summary>
     public KeyCode InteractKey => interactKey;
 
     private readonly Collider[] hits = new Collider[5];
@@ -66,5 +69,11 @@ public class PlayerInteractor : MonoBehaviour
         }
 
         return best;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position + originOffset, interactRadius);
     }
 }
