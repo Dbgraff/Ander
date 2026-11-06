@@ -18,6 +18,6 @@ public interface IInteractable
     /// <summary>
     /// Вызывается, когда игрок нажал на кнопку взаимодействия
     /// </summary>
-    /// <param name="interaactor"></param>
-    void Interact(GameObject interaactor);
+    /// <param name="interactor"></param>
+    void Interact(GameObject interactor);
 }

@@ -412,7 +412,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7346644497445073090}
-  m_Layer: 0
+  - component: {fileID: 4091728451106028387}
+  - component: {fileID: 4705944058201014699}
+  m_Layer: 6
   m_Name: InteractPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,6 +436,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3517973084747515986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4091728451106028387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036629550896948884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.147114}
+  m_Center: {x: 0, y: 0, z: -0.035437673}
+--- !u!114 &4705944058201014699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036629550896948884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262e0152de80b2f41b3a9d7d8bac9a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
+  openPrompt: "\u041E\u0442\u043A\u0440\u044B\u0442\u044C"
+  closePrompt: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+  lockedPrompt: "\u0417\u0430\u043F\u0435\u0440\u0442\u043E"
+  animator: {fileID: 6572008022928613051}
+  openParameter: IsOpen
+  closeable: 0
+  actionDuration: 1
+  locked: 0
+  onOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  onClosed:
+    m_PersistentCalls:
+      m_Calls: []
+  onLockedAttempt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4922156837797486686
 GameObject:
   m_ObjectHideFlags: 0

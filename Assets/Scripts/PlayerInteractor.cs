@@ -16,7 +16,7 @@ public class PlayerInteractor : MonoBehaviour
     /// </summary>
     public KeyCode InteractKey => interactKey;
 
-    private readonly Collider[] hits = new Collider[5];
+    private readonly Collider[] hits = new Collider[16];
 
     /// <summary>
     /// Блокирует взаимодействие
